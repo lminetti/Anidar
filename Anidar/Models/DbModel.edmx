@@ -4,9 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="AnidarModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'Anidar.dbo.Personas' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+    <Schema Namespace="AnidarModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Personas">
           <Key>
             <PropertyRef Name="Id" />
@@ -14,26 +12,15 @@ warning 6002: The table/view 'Anidar.dbo.Personas' does not have a primary key d
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Nombre" Type="nchar" MaxLength="100" />
           <Property Name="Edad" Type="nchar" MaxLength="2" />
-          <Property Name="SemanasEmabarzo" Type="nchar" MaxLength="2" />
+          <Property Name="SemanasEmabarazo" Type="nchar" MaxLength="2" />
           <Property Name="Domicilio" Type="nchar" MaxLength="100" />
           <Property Name="Telefono" Type="nchar" MaxLength="20" />
           <Property Name="Instagram" Type="nchar" MaxLength="100" />
         </EntityType>
         <EntityContainer Name="AnidarModelStoreContainer">
-          <EntitySet Name="Personas" EntityType="Self.Personas" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [Personas].[Id] AS [Id], 
-    [Personas].[Nombre] AS [Nombre], 
-    [Personas].[Edad] AS [Edad], 
-    [Personas].[SemanasEmabarzo] AS [SemanasEmabarzo], 
-    [Personas].[Domicilio] AS [Domicilio], 
-    [Personas].[Telefono] AS [Telefono], 
-    [Personas].[Instagram] AS [Instagram]
-    FROM [dbo].[Personas] AS [Personas]</DefiningQuery>
-          </EntitySet>
+          <EntitySet Name="Personas" EntityType="Self.Personas" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="AnidarModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -44,7 +31,7 @@ warning 6002: The table/view 'Anidar.dbo.Personas' does not have a primary key d
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nombre" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
           <Property Name="Edad" Type="String" MaxLength="2" FixedLength="true" Unicode="true" />
-          <Property Name="SemanasEmabarzo" Type="String" MaxLength="2" FixedLength="true" Unicode="true" />
+          <Property Name="SemanasEmabarazo" Type="String" MaxLength="2" FixedLength="true" Unicode="true" />
           <Property Name="Domicilio" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
           <Property Name="Telefono" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
           <Property Name="Instagram" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
@@ -61,10 +48,10 @@ warning 6002: The table/view 'Anidar.dbo.Personas' does not have a primary key d
           <EntitySetMapping Name="Personas">
             <EntityTypeMapping TypeName="AnidarModel.Persona">
               <MappingFragment StoreEntitySet="Personas">
+                <ScalarProperty Name="SemanasEmabarazo" ColumnName="SemanasEmabarazo" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
                 <ScalarProperty Name="Edad" ColumnName="Edad" />
-                <ScalarProperty Name="SemanasEmabarzo" ColumnName="SemanasEmabarzo" />
                 <ScalarProperty Name="Domicilio" ColumnName="Domicilio" />
                 <ScalarProperty Name="Telefono" ColumnName="Telefono" />
                 <ScalarProperty Name="Instagram" ColumnName="Instagram" />
