@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -15,6 +18,13 @@ namespace Anidar.Controllers
             Persona personaModel = new Persona();
             return View(personaModel);
         }
+        
+        private AnidarEntities db = new AnidarEntities();
+
+        public ActionResult Inscripciones()
+        {
+            return View(db.Personas.ToList());
+        }
 
         [HttpPost]
         public ActionResult AddOrEdit(Persona personaModel)
@@ -27,7 +37,6 @@ namespace Anidar.Controllers
             ModelState.Clear();
             ViewBag.SuccessMessage = "Ingreso correcto.";
             return View("AddOrEdit", new Persona());
-
         }
     }
 }

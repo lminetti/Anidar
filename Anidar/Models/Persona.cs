@@ -11,14 +11,24 @@ namespace Anidar.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Persona
     {
         public int Id { get; set; }
+
+        [Required]
         public string Nombre { get; set; }
+
+        [Required]
         public string Edad { get; set; }
+
+        [DisplayName("Semanas de embarazo")]
         public string SemanasEmabarazo { get; set; }
         public string Domicilio { get; set; }
+
+        [DisplayName("Teléfono")]
         public string Telefono { get; set; }
         public string Instagram { get; set; }
     }

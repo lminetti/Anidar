@@ -13,16 +13,16 @@ namespace Anidar.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult AddOrEdit()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Inscribir.";
 
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult Inscripciones()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Inscripciones.";
 
             return View();
         }
